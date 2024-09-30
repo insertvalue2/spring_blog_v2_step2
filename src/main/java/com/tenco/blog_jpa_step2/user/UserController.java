@@ -1,4 +1,4 @@
-package com.tenco.blog_jpa_step1.user;
+package com.tenco.blog_jpa_step2.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

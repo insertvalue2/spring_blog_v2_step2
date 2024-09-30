@@ -1,4 +1,4 @@
-package com.tenco.blog_jpa_step1.board;
+package com.tenco.blog_jpa_step2.board;
 
 import java.util.List;
 

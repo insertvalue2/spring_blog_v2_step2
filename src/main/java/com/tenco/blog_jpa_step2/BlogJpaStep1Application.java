@@ -1,4 +1,4 @@
-package com.tenco.blog_jpa_step1;
+package com.tenco.blog_jpa_step2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
