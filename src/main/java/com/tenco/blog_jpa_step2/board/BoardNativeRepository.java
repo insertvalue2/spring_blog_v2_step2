@@ -10,13 +10,14 @@ import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 
 /**
+ * 네이티비 쿼리로 데이터를 가져 오는 방법 !!! 
  * BoardNativeRepository는 게시글과 관련된 데이터베이스 작업을 수행하는 레포지토리 클래스입니다.
  */
 @RequiredArgsConstructor
 @Repository
 public class BoardNativeRepository {
     private final EntityManager em;
-
+    
     /**
      * 새로운 게시글을 데이터베이스에 저장합니다.
      */

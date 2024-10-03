@@ -13,22 +13,37 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">TenCoding</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="/join-form">회원가입</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login-form">로그인</a></li>
-            <li class="nav-item"><a class="nav-link" href="/board/save-form">글쓰기</a></li>
-            <li class="nav-item"><a class="nav-link" href="/user/update-form">회원정보보기</a></li>
-            <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">TenCoding</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        {{#sessionUser}} <!-- Mustache: 조건부 렌더링 시작 (sessionUser가 존재할 때) -->
+          <!-- 로그인 상태일 때 표시되는 메뉴 -->
+          <li class="nav-item">
+            <a class="nav-link" href="/board/save-form">글쓰기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/update-form">회원정보보기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">로그아웃</a>
+          </li>
+        {{/sessionUser}} <!-- Mustache: 조건부 렌더링 종료 -->
+
+        {{^sessionUser}} <!-- Mustache: 조건부 렌더링 시작 (sessionUser가 존재하지 않을 때) -->
+          <!-- 로그아웃 상태일 때 표시되는 메뉴 -->
+          <li class="nav-item">
+            <a class="nav-link" href="/join-form">회원가입</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login-form">로그인</a>
+          </li>
+        {{/sessionUser}} <!-- Mustache: 조건부 렌더링 종료 -->
+      </ul>
+    </div>
+  </div>
+</nav>
